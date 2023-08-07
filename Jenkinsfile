@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'jenkinsci/blueocean'
+        }
+    }
 
     environment {
         AWS_REGION = 'ap-southeast-1'
