@@ -10,7 +10,7 @@ pipeline {
         stage('Deploy to EKS') {
             steps {
                 script {
-                    withAWS(region: AWS_REGION, credentials: 'AWS_Cred') {
+                    withAWS(region: AWS_REGION, credentials: 'AWS Cred') {
                         def kubectl = tool 'kubectl'
                         sh "${kubectl} apply -f backend.yaml -n ${K8S_NAMESPACE}"
                         sh "${kubectl} apply -f frontend.yaml -n ${K8S_NAMESPACE}"
