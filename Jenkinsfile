@@ -5,6 +5,8 @@ pipeline {
         AWS_REGION = 'ap-southeast-1'
         K8S_NAMESPACE = 'sd4591-k8s-namespace'
         EKS_NAME = 'my-eks-cluster-devops'
+        backendEcrRepo = '359145461483.dkr.ecr.ap-southeast-1.amazonaws.com/my-ecr-repo-devops/backend'
+        frontendEcrRepo = '359145461483.dkr.ecr.ap-southeast-1.amazonaws.com/my-ecr-repo-devops/frontend'
     }
 
     stages {
