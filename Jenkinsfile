@@ -23,6 +23,7 @@ pipeline {
                         sh "kubectl get pods"
                         sh "kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml"
                         sh "kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.7.1/deploy/static/provider/cloud/deploy.yaml"
+                        sh "kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission"
                         sh "kubectl apply -f ingress.yaml"
                         sh "kubectl get ingress -o wide"
                     }
