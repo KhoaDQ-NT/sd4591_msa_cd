@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_REGION = 'ap-southeast-1'
-        K8S_NAMESPACE = 'sd4591_K8S_NAMESPACE'
+        K8S_NAMESPACE = 'sd4591-k8s-namespace'
         EKS_NAME = 'my-eks-cluster-devops'
     }
 
