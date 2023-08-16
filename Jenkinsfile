@@ -15,6 +15,7 @@ pipeline {
                 script {
                     withAWS(region: AWS_REGION, credentials: 'AWS Cred') {
                         sh "aws eks --region ${AWS_REGION} update-kubeconfig --name ${EKS_NAME}"
+                        sh "kubectl create namespace ${K8S_NAMESPACE}"
                         sh "kubectl apply -f mongodb.yaml -n ${K8S_NAMESPACE}"
                         sh "aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin ${backendEcrRepo}"
                         sh "kubectl apply -f backend.yaml -n ${K8S_NAMESPACE}"
