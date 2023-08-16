@@ -22,7 +22,7 @@ pipeline {
                         sh "kubectl apply -f frontend.yaml -n ${K8S_NAMESPACE}"
                         sh "kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.7.1/deploy/static/provider/cloud/deploy.yaml"
                         sh "kubectl apply -f ingress.yaml -n ${K8S_NAMESPACE}"
-                        sh "kubectl get ingress -o wide"
+                        sh "kubectl get ingress -o wide -n ${K8S_NAMESPACE}"
                     }
                 }
             }
