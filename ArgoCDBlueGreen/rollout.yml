@@ -4,7 +4,7 @@ kind: Rollout
 metadata:
   name: simple-rollout
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     blueGreen:
       # activeService specifies the service to update with the new template hash at time of promotion.
@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: webserver-simple
-          image: 359145461483.dkr.ecr.ap-southeast-1.amazonaws.com/my-ecr-repo-devops/frontend:green
+          image: 359145461483.dkr.ecr.ap-southeast-1.amazonaws.com/my-ecr-repo-devops/frontend:blue
           ports:
             - name: http
               containerPort: 3000
