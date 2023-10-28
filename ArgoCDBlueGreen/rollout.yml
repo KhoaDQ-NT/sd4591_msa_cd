@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: webserver-simple
-          image: 359145461483.dkr.ecr.ap-southeast-1.amazonaws.com/my-ecr-repo-devops/frontend:blue
+          image: 359145461483.dkr.ecr.ap-southeast-1.amazonaws.com/my-ecr-repo-devops/frontend:green
           ports:
             - name: http
               containerPort: 3000
